@@ -1,15 +1,15 @@
 # 1ACC0216 - Fundamentos de Data Science (TB1)
-## Análisis Exploratorio, Calidad de Datos y Visualización: Hotel Booking Demand
-
-* **Institución:** Universidad Peruana de Ciencias Aplicadas (UPC)
-* **Carrera:** Facultad de Ingeniería
-* **Ciclo:** 2026-02 | **NRC:** 4879
-* **Docente:** Nérida Isabel Manrique Tunque
-* **Grupo:** Grupo 01
+## Hotel Booking Demand: Análisis de Calidad, Exploración y Visualización
 
 ---
 
-## 1. Integrantes del Equipo
+## 1. Objetivo del trabajo
+
+Evaluar la calidad de los datos del conjunto *Hotel Booking Demand*, aplicar procedimientos de preparación y limpieza bajo criterios estadísticos y reglas de negocio, y desarrollar un análisis exploratorio univariado y bivariado que responda a las preguntas analíticas sobre volumen de reservas, tasas de cancelación y estacionalidad de la demanda en ambos tipos de hotel.
+
+---
+
+## 2. Nombre de los alumnos participantes
 
 | Nombres y Apellidos | Código de Estudiante |
 | :--- | :---: |
@@ -21,20 +21,30 @@
 
 ---
 
-## 2. Objetivo del Trabajo
+## 3. Breve descripción del dataset
 
-Evaluar rigurosamente la calidad de datos del dataset *Hotel Booking Demand*, ejecutar las transformaciones y preparación de la muestra bajo criterios de negocio, y desarrollar un análisis exploratorio univariado y bivariado que responda a las preguntas analíticas sobre la concentración de reservas, el comportamiento de las cancelaciones y la estacionalidad de la demanda en ambos tipos de hotel.
+El conjunto de datos analizado contiene registros transaccionales de reservas hoteleras entre julio de 2015 y agosto de 2017 para dos establecimientos en Portugal: un hotel urbano (City Hotel) y un hotel vacacional (Resort Hotel).
 
----
+* **Volumen original:** 119,390 filas y 32 variables.
+* **Volumen preparado:** 87,394 filas y 32 variables depuradas tras eliminar 31,994 registros duplicados exactos y excluir 2 errores de tarifa diaria (`adr < 0` y `adr > 5000`).
+* **Variables principales:** `hotel`, `is_canceled`, `lead_time`, `arrival_date_month` y `adr`.
+* **Referencia bibliográfica:** Antonio, N., Almeida, A., & Nunes, L. (2019). Hotel booking demand datasets. *Data in Brief*, 22, 41–49.
 
-## 3. Breve Descripción del Dataset
-
-El dataset analizado contiene registros transaccionales de reservas hoteleras entre julio de 2015 y agosto de 2017 para dos establecimientos en Portugal: un hotel urbano (City Hotel) y un hotel vacacional (Resort Hotel).
-
-* **Dimensión original:** 119,390 registros y 32 variables.
-* **Dimensión preparada (`hotel_preparado.csv`):** 87,394 registros y 32 variables tras remover 31,994 duplicados exactos y excluir 2 errores de tarifa diaria (`adr < 0` y `adr > 5000`).
-* **Variables críticas:** `hotel`, `is_canceled`, `lead_time`, `arrival_date_month` y `adr`.
+📄 **Informe completo del proyecto:** [Descargar Informe en PDF](./upc-grupo01-tb1-informe.pdf)
 
 ---
 
-5. Principales ConclusionesMayor volumen en el hotel urbano: El City Hotel concentra el 61.1% de las reservas totales ($53,427$), superando al Resort Hotel que abarca el 38.9% ($33,967$).Mayor riesgo de cancelación en City Hotel: El City Hotel presenta una tasa de cancelación del 30.0% ($16,048$ cancelaciones), frente a un 23.5% ($7,976$ cancelaciones) en el Resort Hotel.Hiperestacionalidad en Resort Hotel: El Resort Hotel incrementa su demanda en un +137.7% entre enero ($1,963$ reservas) y su pico estival de agosto ($4,666$ reservas), mientras que el City Hotel sostiene una afluencia superior a 4,200 reservas mensuales en la mayor parte del año.Calidad de datos: Se identificaron 31,994 registros duplicados (26.8%) provenientes de reservas masivas en bloque de agencias. Su depuración fue indispensable para no sobreestimar la tasa global de cancelaciones.
+## 4. Conclusiones
+
+| Dimensión Analizada | Conclusión |
+| :--- | :--- |
+| **Participación de Mercado** | El City Hotel concentra la mayor parte de las operaciones de la cadena al absorber el **61.1% de la demanda global ($53,427$ reservas)**, superando al Resort Hotel que abarca el **38.9% ($33,967$ reservas)**. |
+| **Riesgo por Cancelaciones** | El City Hotel asume una mayor vulnerabilidad operativa con una **tasa de cancelación del 30.0% ($16,048$ cancelaciones)**, frente a un comportamiento más estable en el Resort Hotel, cuya tasa de cancelación es de **23.5% ($7,976$ cancelaciones)**. |
+| **Comportamiento Estacional** | La demanda del Resort Hotel depende críticamente del verano boreal, creciendo un **+137.7%** entre su punto más bajo en enero ($1,963$ reservas) y su pico en agosto ($4,666$ reservas). Por el contrario, el City Hotel sostiene una afluencia superior a las 4,200 reservas mensuales durante la mayor parte del año. |
+| **Calidad y Depuración de Datos** | La base en crudo presentaba un **26.8% de redundancias exactas ($31,994$ registros)** por reservas en bloque de agencias de viaje. Su eliminación fue determinante para reflejar decisiones independientes de los clientes y evitar la sobreestimación de la tasa general de cancelaciones. |
+
+---
+
+## 5. Licencia
+
+Este proyecto se distribuye bajo los términos de la Licencia MIT. Para mayor información, consulte el archivo `LICENSE` en este repositorio.
