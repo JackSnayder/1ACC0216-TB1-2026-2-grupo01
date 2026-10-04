@@ -37,16 +37,4 @@ El dataset analizado contiene registros transaccionales de reservas hoteleras en
 
 ---
 
-## 4. Estructura del Repositorio
-
-```text
-1ACC0216-TB1-2026-2-grupo01/
-├── README.md                       # Documentación principal
-├── LICENSE                         # Licencia MIT
-├── data/
-│   ├── hotel_bookings_original.csv  # Muestra original (119,390 filas)
-│   └── hotel_bookings_preparado.csv # Muestra limpia (87,394 filas)
-├── code/
-│   └── upc-grupo01-tb1-codigo.R     # Script reproducible en R
-└── output/
-    └── graficos/                   # Visualizaciones exportadas (300 DPI)
+5. Principales ConclusionesMayor volumen en el hotel urbano: El City Hotel concentra el 61.1% de las reservas totales ($53,427$), superando al Resort Hotel que abarca el 38.9% ($33,967$).Mayor riesgo de cancelación en City Hotel: El City Hotel presenta una tasa de cancelación del 30.0% ($16,048$ cancelaciones), frente a un 23.5% ($7,976$ cancelaciones) en el Resort Hotel.Hiperestacionalidad en Resort Hotel: El Resort Hotel incrementa su demanda en un +137.7% entre enero ($1,963$ reservas) y su pico estival de agosto ($4,666$ reservas), mientras que el City Hotel sostiene una afluencia superior a 4,200 reservas mensuales en la mayor parte del año.Calidad de datos: Se identificaron 31,994 registros duplicados (26.8%) provenientes de reservas masivas en bloque de agencias. Su depuración fue indispensable para no sobreestimar la tasa global de cancelaciones.
